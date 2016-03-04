@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       var newMap = new GMaps({
         div: "#main-map",
         lat: 0.00,
-        lng: 0.00, 
+        lng: .00, 
         zoom: 3
       });
       this.set('map', newMap);
