@@ -1,14 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  map: Ember.inject.service(),
   didInsertElement: function() {
-    console.log(this.get('location'))
     Ember.run.scheduleOnce('afterRender', this, function() {
-      this.get('map').drawCircle({
-        lat: parseInt(this.get('location').get('recLat')),
-        lng: parseInt(this.get('location').get('recLng')),
-        radius: Math.sqrt(parseInst(this.get('location').get('mass'))) * 100
-      }) 
+      var circle = this.get('map').current.drawCircle({
+        lat: parseFloat(this.get('landing').get('reclat')),
+        lng: parseFloat(this.get('landing').get('reclong')),
+        radius: Math.sqrt(parseFloat(this.get('landing').get('mass'))) * 100,
+        fillColor: "red",
+        strokeWidth: 0
+      });
+      console.log(this.get('landing'));
     })
   }
 });
