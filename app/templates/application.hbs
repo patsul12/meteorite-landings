@@ -1,38 +1,42 @@
-{{#paper-nav-container}}
-  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
-    {{#paper-toolbar}}
-      <div class="md-toolbar-tools">
-        <div class="logo">
-          <img src="http://icons.iconarchive.com/icons/flat-icons.com/flat/512/Meteor-icon.png" height="30"/>
-          <strong>Meteorite Landings</strong>
+{{#if currentlyLoading}}
+  <h1>LoAF</h1>
+{{else}}
+  {{#paper-nav-container}}
+    {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
+      {{#paper-toolbar}}
+        <div class="md-toolbar-tools">
+          <div class="logo">
+            <img src="http://icons.iconarchive.com/icons/flat-icons.com/flat/512/Meteor-icon.png" height="30"/>
+            <strong>Meteorite Landings</strong>
+          </div>
         </div>
-      </div>
-    {{/paper-toolbar}}
+      {{/paper-toolbar}}
 
-    {{#paper-content}}
-      {{#paper-list}}
-        {{#paper-item action="transitionTo" param="index"}}Reset{{/paper-item}}
-        {{#paper-item action="transitionTo" param="index"}}Filter{{/paper-item}}
-      {{/paper-list}}
-    {{/paper-content}}
-  {{/paper-sidenav}}
+      {{#paper-content}}
+        {{#paper-list}}
+          {{#paper-item action="transitionTo" param="index"}}Reset{{/paper-item}}
+          {{side-filters}}
+        {{/paper-list}}
+      {{/paper-content}}
+    {{/paper-sidenav}}
 
-  <div layout="column" tabindex="-1" role="main" flex>
-    {{#paper-toolbar}}
-      <div class="md-toolbar-tools">
-        {{#paper-sidenav-toggle as |toggle|}}
-          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
-        {{/paper-sidenav-toggle}}
-      </div>
-    {{/paper-toolbar}}
+    <div layout="column" tabindex="-1" role="main" flex>
+      {{#paper-toolbar}}
+        <div class="md-toolbar-tools">
+          {{#paper-sidenav-toggle as |toggle|}}
+            {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+          {{/paper-sidenav-toggle}}
+        </div>
+      {{/paper-toolbar}}
 
-    {{#paper-content class="md-padding"}}
-      <div id="main-info">
-        {{meteorite-info circle=currentCircle}}
-      </div>
-      <div id="main-map">
-        {{outlet}}
-      </div>
-    {{/paper-content}}
-  </div>
-{{/paper-nav-container}}
+      {{#paper-content class="md-padding"}}
+        <div id="main-info">
+          {{meteorite-info circle=currentCircle}}
+        </div>
+        <div id="main-map">
+          {{outlet}}
+        </div>
+      {{/paper-content}}
+    </div>
+  {{/paper-nav-container}}
+{{/if}}

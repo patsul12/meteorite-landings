@@ -1,7 +1,7 @@
 @import 'ember-paper';
 
 #main-map {
-  height: 100vh;
+  height: 95vh;
 }
 
 .md-default-theme {
@@ -19,6 +19,7 @@
   right: 10px;
   padding: 10px;
   color: white;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
   z-index: 999;
+  font-size: 1.5em;
 }

@@ -17,7 +17,7 @@ export default Ember.Component.extend({
         strokeOpacity: 0.4,
         strokeWidth: 2,
         strokeOpacity: 0,
-        mouseover: function(e) {
+        click: function(e) {
           component.sendAction('updateInfoPanel', component.get('circle'), component.get('landing'));
         }
       });
