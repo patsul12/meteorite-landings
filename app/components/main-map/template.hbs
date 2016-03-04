@@ -1,1 +1,6 @@
-<div id="main-map"></div>
+<div id="main-map">
+  {{#each locations as |location|}}
+    {{location-circle location=location map=map}}
+  {{/each}}
+</div>
+
