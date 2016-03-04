@@ -27,8 +27,12 @@
     {{/paper-toolbar}}
 
     {{#paper-content class="md-padding"}}
-      {{meteorite-info circle=currentCircle}}
-      {{outlet}}
+      <div id="main-info">
+        {{meteorite-info circle=currentCircle}}
+      </div>
+      <div id="main-map">
+        {{outlet}}
+      </div>
     {{/paper-content}}
   </div>
 {{/paper-nav-container}}
