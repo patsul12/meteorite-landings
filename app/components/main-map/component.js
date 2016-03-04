@@ -3,6 +3,7 @@ import GMaps from 'npm:gmaps';
 
 export default Ember.Component.extend({
   map: Ember.inject.service(),
+  currentCircle: Ember.inject.service(),
 
   didInsertElement: function() {
     var styleArray = [
@@ -36,5 +37,11 @@ export default Ember.Component.extend({
       mapTypeId: google.maps.MapTypeId.SATELLITE
     });
     this.get('map').newMap(newMap);
+  },
+
+  actions: {
+    updateInfoPanel(circle, landing) {
+      this.get('currentCircle').update(circle, landing);
+    }
   }
 });
