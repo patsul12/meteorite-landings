@@ -1,7 +1,6 @@
 # Meteorite-landings
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Using NASA's publicly available data this app plots out the 1000 largestmeteorite strikes in recorded history. Using Google Maps it displays each strike as a function of its mass and allows users to view the location and statistics associated with a given strike.
 
 ## Prerequisites
 
@@ -38,10 +37,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
